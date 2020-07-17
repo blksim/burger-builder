@@ -93,6 +93,12 @@ class BurgerBuilder extends Component {
             disabledInfo[key] = disabledInfo[key] <= 0
         }
         /// { salad: true, meat: false....}
+        // even when Modal is hidden, OrderSummary re-renders. how to improve it?
+        // => change Modal into class-based component and use lifecycle method shouldComponentUpdate
+
+        // Theoretically, the wrapping element controls the updating of the wrapped element.
+        // So OrderSummary is included in the burger builder component.
+        // But it is not updated because the wrapping element Modal has a shouldComponentUpdate method where we control this.
         return (
             <Auxiliary>
                 <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
