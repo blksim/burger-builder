@@ -1,9 +1,11 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import classes from './Burger.module.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
-const burger = (props) => { 
+const burger = (props) => {
+    console.log(props);
     let transformedIngredients = Object.keys(props.ingredients) // 키(재료명)만 추출한 배열 
         .map(igKey => { // 각 배열 요소(재료명)마다 
             // props.ingredients[igKey] == 재료 수량 만큼 
@@ -29,4 +31,4 @@ const burger = (props) => {
     );
 };
 
-export default burger;
+export default withRouter(burger);
