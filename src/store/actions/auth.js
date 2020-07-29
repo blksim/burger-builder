@@ -1,7 +1,6 @@
 //import axios from '../../axios-orders';
 import axios from 'axios';
 import * as actionTypes from './actionTypes';
-import { updateObject } from '../utility';
 
 export const authStart = () => {
   return {
